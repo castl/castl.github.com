@@ -1,0 +1,15 @@
+autoload=1
+bgcolor1=189ca8
+bgcolor2=085c68
+playercolor=085c68
+showiconplay=1
+showplayer=always
+showstop=1
+showtime=2
+showvolume=1
+volume=100
+width=640
+height=380
+showtitleandstartimage=0
+showopen=0
+showfullscreen=1

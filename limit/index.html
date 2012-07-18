@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/DefaultTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>LiMiT</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<style type="text/css"> 
+<!-- 
+body  {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+
+/* Tips for Elastic layouts 
+1. Since the elastic layouts overall sizing is based on the user's default fonts size, they are more unpredictable. Used correctly, they are also more accessible for those that need larger fonts size since the line length remains proportionate.
+2. Sizing of divs in this layout are based on the 100% font size in the body element. If you decrease the text size overall by using a font-size: 80% on the body element or the #container, remember that the entire layout will downsize proportionately. You may want to increase the widths of the various divs to compensate for this.
+3. If font sizing is changed in differing amounts on each div instead of on the overall design (ie: #sidebar1 is given a 70% font size and #mainContent is given an 85% font size), this will proportionately change each of the divs overall size. You may want to adjust based on your final font sizing.
+*/
+.twoColElsLtHdr #container { 
+	width: 90%;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+.twoColElsLtHdr #header { 
+	background: #DDDDDD; 
+	padding: 0 10px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.twoColElsLtHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+
+/* Tips for sidebar1:
+1. Be aware that if you set a font-size value on this div, the overall width of the div will be adjusted accordingly.
+2. Since we are working in ems, it's best not to use padding on the sidebar itself. It will be added to the width for standards compliant browsers creating an unknown actual width. 
+3. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".twoColElsLtHdr #sidebar1 p" rule.
+*/
+.twoColElsLtHdr #sidebar1 {
+	float: left; 
+	width: 12em; /* since this element is floated, a width must be given */
+	background: #EBEBEB; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 0; /* top and bottom padding create visual space within this div */
+}
+.twoColElsLtHdr #sidebar1 h3, .twoColElsLtHdr #sidebar1 p {
+	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
+	margin-right: 10px;
+}
+
+/* Tips for mainContent:
+1. If you give this #mainContent div a font-size value different than the #sidebar1 div, the margins of the #mainContent div will be based on its font-size and the width of the #sidebar1 div will be based on its font-size. You may wish to adjust the values of these divs.
+2. The space between the mainContent and sidebar1 is created with the left margin on the mainContent div.  No matter how much content the sidebar1 div contains, the column space will remain. You can remove this left margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends.
+3. To avoid float drop, you may need to test to determine the approximate maximum image/element size since this layout is based on the user's font sizing combined with the values you set. However, if the user has their browser font size set lower than normal, less space will be available in the #mainContent div than you may see on testing.
+4. In the Internet Explorer Conditional Comment below, the zoom property is used to give the mainContent "hasLayout." This avoids several IE-specific bugs that may occur.
+*/
+.twoColElsLtHdr #mainContent {
+	margin: 0 1.5em 0 13em; /* the right margin can be given in ems or pixels. It creates the space down the right side of the page. */
+} 
+.twoColElsLtHdr #footer { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#DDDDDD;
+} 
+.twoColElsLtHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+/* Miscellaneous classes for reuse */
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+a {
+	color: #333;
+}
+--> 
+</style><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColElsLtHdr #sidebar1 { padding-top: 30px; }
+.twoColElsLtHdr #mainContent { zoom: 1; padding-top: 15px; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]--></head>
+
+<body class="twoColElsLtHdr">
+
+<div id="container">
+  <div id="header">
+    <h1>LiMiT -- <!-- InstanceBeginEditable name="PageName" -->Overview<!-- InstanceEndEditable --></h1>
+  <!-- end #header --></div>
+  <div id="sidebar1">
+    <h4><a href="index.html">Overview</a></h4>
+    <h4><a href="download.html">Download</a></h4>
+    <h4>
+      <a href="install.html">
+    <!-- end #sidebar1 -->
+    Install Instructions</a></h4>
+    <h4>LiMiT Tools</h4>
+    <p><a href="lock_monitor.html">Lock Monitor</a></p>
+    <p><a href="library_monitor.html">Library Monitor</a></p>
+    <h4><a href="video_demo.html">Video Demo</a></h4>
+    <h4><a href="sponsors.html">Sponsors</a></h4>
+  </div>
+  <div id="mainContent"><!-- InstanceBeginEditable name="Content" -->
+    <p>
+      <!-- end #mainContent -->
+    LiMiT -- Lightweight MonItoring Toolkit -- is a patch for the Linux kernel and userland library which enables direct userspace access to Intel's hardware performance counters for lightweight, precise performance measurements. A <a href="limit.pdf">paper</a> detailing the implementation of LiMiT and several case studies was presented at ISCA 2011.</p>
+    <h3>LiMiT -- A tool for reading out performance counters in nanoseconds</h3>
+    <hr />
+    <p><a href="img/mysql_overheads.png" title="Locking instrumentation overheads with various counter access methods.">
+    <img src="img/mysql_overheads.png" alt="Locking instrumentation overheads with various counter access methods." width="200" height="170" align="right" /></a>
+    Current Linux tools for accessing performance counters viz. Perfmon2 (and thus PAPI) require system calls to read out counters. System calls usually take microseconds to execute and can perturb execution. LiMiT enables reading performance counters in userspace, decreasing read time to 5 instructions taking about 37 cycles on a modern x86 processor -- which is in the nanoseconds range.</p>
+    <p>The chart on the right shows an example of the overheads when instrumenting pthread locking calls in MySQL. In a direct comparison benchmark (3 counters with 10e7 reads each, no other code), we see the following:<br />
+    </p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>PAPI-C</td>
+          <td>perf_event</td>
+          <td>LiMiT</td>
+          <td>Speedup over PAPI</td>
+          <td>Speedup over perf_event</td>
+        </tr>
+        <tr>
+          <td>Wall Time</td>
+          <td>7.87s</td>
+          <td>31.44s</td>
+          <td>0.34s</td>
+          <td>92x</td>
+          <td>23.1x</td>
+        </tr>
+        <tr>
+          <td>User Time</td>
+          <td>0.53s</td>
+          <td>1.26s</td>
+          <td>0.34s</td>
+          <td>3.7x</td>
+          <td>1.56x</td>
+        </tr>
+        <tr>
+          <td>Kernel Time</td>
+          <td>7.30s</td>
+          <td>30.10s</td>
+          <td>0.0s</td>
+          <td>∞</td>
+          <td>∞</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Usage</h3>
+    <hr />
+    <p>LiMiT has several usage modes, however the most useful is the C API. In this mode, you include limit.h in your source code and link against the LiMiT library. The API provides a set of functions to set up/close hardware performance counters as well as read them. Routines for reading are inlined to decrease latency to 5 instructions.</p>
+    <p>Usage Example: Measurement of branch misprediction during a function call.</p>
+<pre>
+// Compile with: gcc -O3 -o hello hello.c -llimit -ldl
+#include &lt;limit.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;stdio.h&gt; 
+ 
+#define str1 "Hello World, Hello World, Hello World"
+#define str2 "HELLOWORLDHELLOWORLDHELLOWORLDHELLOWO"
+ 
+const char* testStr = str1;  //Also try str2
+ 
+uint64_t uppersFound = 0, lowersFound = 0;
+void function_to_watch(void) {
+    size_t i;
+    const char* c = testStr;
+ 
+    while (*c != 0) {
+      if (isupper(*c))
+        uppersFound++;
+      else if (islower(*c))
+        lowersFound++;
+      c++;
+    }
+}
+ 
+int main(void) {
+    uint64_t br_last, brm_last, c, br, brm;
+    size_t i;
+ 
+    lprof_init(3, EV_CYCLES, EV_BRANCH, EV_BRANCH_MISS);
+ 
+    for (i=1; i<=30; i++) {
+      lprof(2, br_last);  //Optional: 
+      lprof(3, brm_last); // sample just before call
+ 
+      function_to_watch(); // Do something
+ 
+      lprof(1, c);        //Get cumulative cycles
+      lprofd(2, br, br_last);    //Get delta branches
+      lprofd(3, brm, brm_last);   //Get delta mispreds
+ 
+      printf("At Cycle: %7lu, Br Misprediction: %lf\n",
+    		c, 100.0*((double)brm)/br);
+    }
+ 
+    lprof_close();
+}
+</pre>
+    <h3>Download &amp; Installation</h3>
+    <hr/>
+    <p><a href="download.html" title="Download">Download</a> and <a href="install.html" title="Installation">Installation</a></p>
+<!-- InstanceEndEditable --></div>
+	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
+   <div id="footer">
+    <table width="100%" border="0">
+      <tr>
+        <td width="100"><img src="img/cucs.jpg" width="100" height="81" longdesc="http://www.cs.columbia.edu" /></td>
+        <td><p>LiMiT is produced by the<br/>
+          <a href="http://castl.cs.columbia.edu/">Computer Architecture and Security Technologies Lab</a><br/>
+        at the <a href="http://www.cs.columbia.edu/">Computer Science Department</a> at <a href="http://www.columbia.edu/">Columbia University</a></p></td>
+      </tr>
+    </table>
+  <!-- end #footer --></div>
+<!-- end #container --></div>
+</body>
+<!-- InstanceEnd --></html>
