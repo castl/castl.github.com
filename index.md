@@ -45,23 +45,4 @@ These backdoors can cause hardware to fail on command or leak sensitive
 information.  Techniques created in CASTL can prevent these backdoors from being
 effective.
 
-Why is this a problem?
 
-I am often asked if hardware backdoors and kill switches are a real threat.
-Here is what the Pentagon/Deputy Secretary of Defense, William Lynn had to say
-on this:
-
-"Computer networks themselves are not the only vulnerability. Software and
-hardware are at risk of being tampered with even before they are linked together
-in an operational system. Rogue code, including so-called logic bombs, which
-cause sudden malfunctions, can be inserted into software as it is being
-developed. As for hardware, remotely operated "kill switches" and hidden
-"backdoors" can be written into the computer chips used by the military,
-allowing outside actors to manipulate the systems from afar. The risk of
-compromise in the manufacturing process is very real and is perhaps the least
-understood cyberthreat. Tampering is almost impossible to detect and even harder
-to eradicate. Already, counterfeit hardware has been detected in systems that
-the Defense Department has procured. The Pentagon's Trusted Foundries Progam,
-which certifies parts produced by microelectronics manufacturers, is a good
-start, but it is not a comprehensive solution to the risks to the department's
-technological base."
